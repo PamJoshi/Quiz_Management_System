@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TestQuester - Test Your Knowledge</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    /* Custom styles specific to this page */
+    .jumbotron {
+      margin-bottom: 0px;
+      background-color: #2980b9;  /* Initial background color (blue) */
+      height: 90vh;
+      color: #fff;  /* Set text color to white for better contrast */
+      display: flex;  /* Allow vertical centering of content */
+      align-items: center;  /* Vertically center content within jumbotron */
+      justify-content: center;  /* Horizontally center content within jumbotron */
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);  /* Subtle text shadow for readability */
+      border-radius: 15px; /* Add border radius for smoother edges */
+      overflow: hidden; /* Hide overflowing gradient */
+      position: relative; /* Ensure the container stays relative for absolute positioning */
+    }
+
+    .jumbotron-content {
+      position: relative; /* Ensure content stays above the overlay */
+      z-index: 1; /* Ensure content stays above overlay */
+      color: #fff; /* Text color */
+      text-align: center; /* Center text */
+    }
+
+    .lead {
+      font-size: 1.5rem;  /* Adjust lead text size for better hierarchy */
+    }
+
+    .btn-lg {
+      font-size: 1.25rem;  /* Adjust button text size for better proportion */
+      padding: 15px 30px;  /* Adjust button padding for more balanced look */
+    }
+  </style>
+</head>
+
+<body>
+  
+  
+  <section id="section-jumbotron" class="jumbotron jumbotron-fluid">
+    {% include "quiz/navbar.html" %}
+    <div   class="container text-center jumbotron-content" >
+      <div style="background-color:rgba(0,0,0,0.11); backdrop-filter:blur(2px); border-radius: 30px; ">
+      <h1 class="display-3">Ready for a Test?</h1>
+      <p class="lead"><b>Join the Ranks of the Elite</b></p>
+      <p class="lead text-warning"><b>Sign up because This is where the real warriors come to test their mettle and prove their worth.</b></p>
+      <br>
+      <a href="/student/studentsignup" class="btn btn-lg btn-warning"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a>
+      <br><br>
+      <p class="lead"><b>Note: Tests only defines the power of your memonry not your actual skills.</b></p>
+      <br><br><br></div>
+      {% include "quiz/footer.html" %}
+    </div>
+    <div id="jumbotron-overlay"></div>
+  </section>
+
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script>
+    // JavaScript for dynamic background gradient
+    const jumbotron = document.querySelector('#section-jumbotron');
+
+    jumbotron.addEventListener('mousemove', (event) => {
+      const x = event.clientX / window.innerWidth;
+      const y = event.clientY / window.innerHeight;
+      jumbotron.style.background = `radial-gradient(circle farthest-corner at ${x * 100}% ${y * 100}%, #e64e4e, #2980b9)`;
+    });
+  </script>
+  
+  
+
+</body>
+
+</html>
+    

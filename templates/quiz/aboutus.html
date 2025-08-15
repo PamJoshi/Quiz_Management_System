@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+
+  <title></title>
+</head>
+
+<body>
+
+  {% include "quiz/navbar.html" %}
+  <br><br>
+  <center>
+    <h3 class='alert alert-success' style="margin-bottom:0px;">About Me !</h3>
+  </center>
+  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+    
+    <p class="lead">Hello and welcome to my corner of the web! My name is Param, and I'm delighted to have you here.
+      <br> <b>Who Am I?</b> Maybe a Student or a friend or a relative anything what you beleive.
+      <br>You can call me <b>"Nobody"</b>.
+      <br>What You'll Find Here ---> <b>NOTHING!</b> Just A Bunch Of Random Stuff.
+      <br>Let's <b>Connect</b>-----> My social links is in footer, you can check it 😊
+      <br>Message me in Instagram for my phone number. [<b>NOTE:</b> if you want]
+      </p>
+    <hr class="my-4">
+    <p>Explore my Website.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+    </p>
+  </div>
+
+  {% include "quiz/footer.html" %}
+</body>
+
+</html>
