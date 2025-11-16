@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'student',
     'widget_tweaks',
     'django_bootstrap5',
-
+    
 ]
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
